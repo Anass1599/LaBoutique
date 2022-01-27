@@ -39,8 +39,18 @@ class RegisterType extends AbstractType
                 'type' => PasswordType::class,
                 'label' => 'Votre mot de passe',
                 'required' => true,
-                'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Confirmez votre mot de passe']
+                'first_options' => [
+                    'label' => 'Mot de passe',
+                    'attr' => [
+                        'placeholder' => 'Merci de saisir votre mot de passe',
+                        ]
+                ],
+                'second_options' => [
+                    'label' => 'Confirmez votre mot de passe',
+                    'attr' => [
+                        'placeholder' => 'Merci de confirmez votre mot de passe',
+                        ]
+                ]
             ])
             ->add('sublit', SubmitType::class, [
                 'label' => "S'inscrire",
