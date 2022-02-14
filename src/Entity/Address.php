@@ -68,6 +68,11 @@ class Address
      */
     private $phone;
 
+    public function __toString(){
+
+        return $this->getAddress();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

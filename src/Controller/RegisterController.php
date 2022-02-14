@@ -31,6 +31,7 @@ class RegisterController extends AbstractController
            $user->setPassword($password);
            $entityManager->persist($user);
            $entityManager->flush($user);
+           return $this->redirectToRoute('account');
 
         }
 
