@@ -42,3 +42,20 @@ body{
     max-width: 55%;
     margin: 0 auto;
 }
+
+.form-check{
+    background-color: #f4f8ff;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+}
+
+.col-form-label{
+    font-weight: bold;
+}
+.order-summary{
+    background-color: #f4f8ff;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+}
