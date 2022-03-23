@@ -26,7 +26,7 @@ class Order
     private $user;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $createAt;
 
@@ -60,6 +60,16 @@ class Order
         $this->orderDetails = new ArrayCollection();
     }
 
+    public function getTotal()
+    {
+        $total = null;
+
+        foreach ($this->orderDetails->getValues() as $product) {
+           $total = $total + ($product->getPrice() * $product->getQuantity());
+        }
+        return $total;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,12 +87,12 @@ class Order
         return $this;
     }
 
-    public function getCreateAt(): ?\DateTimeImmutable
+    public function getCreateAt(): ?\DateTimeInterface
     {
         return $this->createAt;
     }
 
-    public function setCreateAt(\DateTimeImmutable $createAt): self
+    public function setCreateAt(\DateTimeInterface $createAt): self
     {
         $this->createAt = $createAt;
 

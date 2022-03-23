@@ -9,6 +9,8 @@ use App\Form\OrderType;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\DateTimeImmutable;
+use Stripe\Checkout\Session;
+use Stripe\Stripe;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,6 +24,8 @@ class OrderController extends AbstractController
      */
     public function index(Cart $cart, ProductRepository $productRepository)
     {
+        $product_objet = $productRepository->findOneByName($id);
+        dump($product_objet);
         $cartComplete = [];
 
         if ($cart->get()) {
@@ -54,7 +58,7 @@ class OrderController extends AbstractController
     }
 
     /**
-     *  @Route("/commande/recapitulatif", name="order_recap")
+     *  @Route("/commande/recapitulatif", name="order_recap", methods={"POST"})
      */
     public function add(Cart $cart, ProductRepository $productRepository, Request $request, EntityManagerInterface $entityManager)
     {
@@ -85,7 +89,7 @@ class OrderController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
 
-            $date = new \DateTimeImmutable();
+            $date = new \DateTime();
             $carriers = $form->get('carriers')->getData();
             $delivery = $form->get('addresses')->getData();
             $delivery_content = $delivery->getFirstname().' '.$delivery->getlastname().'<br/>'.$delivery->getPhone();
@@ -108,7 +112,6 @@ class OrderController extends AbstractController
            $order->setIsPaid(0);
            $entityManager->persist($order);
 
-
            foreach ($cartComplete as $product) {
 
                $orderDetails = new OrderDetails();
@@ -122,12 +125,12 @@ class OrderController extends AbstractController
            }
            //$entityManager->flush();
 
+            return $this->render('order/add.html.twig', [
+                'cart' => $cartComplete,
+                'carrier' => $carriers,
+                'delivery' => $delivery_content,
+            ]);
         }
-
-        return $this->render('order/add.html.twig', [
-            'cart' => $cartComplete,
-            'carrier' => $carriers,
-            'delivery' => $delivery_content,
-        ]);
+        return $this->redirectToRoute('cart');
     }
 }

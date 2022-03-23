@@ -137,6 +137,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laboutique/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/laboutique/vendor/phar-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/laboutique/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stripe/stripe-php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -59,3 +59,9 @@ body{
     padding: 1rem 2rem;
     margin-top: 1rem;
 }
+
+.order-summary1{
+    background-color: #f4f8ff;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+}
