@@ -24,8 +24,6 @@ class OrderController extends AbstractController
      */
     public function index(Cart $cart, ProductRepository $productRepository)
     {
-        $product_objet = $productRepository->findOneByName($id);
-        dump($product_objet);
         $cartComplete = [];
 
         if ($cart->get()) {
@@ -104,6 +102,8 @@ class OrderController extends AbstractController
 
 
            $order = new Order();
+           $reference = $date->format('dmy').'-'.uniqid();
+           $order->setReference($reference);
            $order->setUser($this->getUser());
            $order->setCreateAt($date);
            $order->setCarrierName($carriers->getName());
@@ -123,12 +123,14 @@ class OrderController extends AbstractController
                $entityManager->persist($orderDetails);
 
            }
-           //$entityManager->flush();
+
+           $entityManager->flush();
 
             return $this->render('order/add.html.twig', [
                 'cart' => $cartComplete,
                 'carrier' => $carriers,
                 'delivery' => $delivery_content,
+                'reference' => $order->getReference(),
             ]);
         }
         return $this->redirectToRoute('cart');
