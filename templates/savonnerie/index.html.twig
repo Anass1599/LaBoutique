@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="featurette">
+        <h2 style="color: #B87750">La Savonnerie</h2>
+        <h3 style="color: #B87750">La saponification à froid : le secret du savon surgras</h3>
+        <p class="lead">Tous nos savons sont fabriqués avec la technique de saponification à froid.Ce processus consiste à mélanger des Huiles végétales avec la soude caustique pour créer la molécule de savon, la Glycérine naturelle et le surgras.
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/assets/img/savonniere.jpg" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/assets/img/cantal1.jpg" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/assets/img/cantal.jpg" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/assets/img/savonniere1.jpg" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/assets/img/savonniere2.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row featurette align-items-center">
+            <div class="col-md-7">
+                <h4 class="">La Fabrication :</h4>
+                <p class="lead">Le mélange entre les huiles végétales et la soude se fait à froid. Ce qui veut dire que les huiles ne sont pas cuites afin de conserver toutes leurs propriétés.
+                    Une fois le savon réalisé il est mis en cure pendant 4 semaines. Pendant cette période le savon sera entreposé sur des étagères de séchages jusqu’à ce que la soude soit totalement transformée et le savon prêt à être utilisé.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('/assets/img/fab.jpg') }}" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="">
+            <h4 class="">La Glycérine c’est quoi ?</h4>
+            <p class="lead">La glycérine se forme naturellement grâce à la réaction entre la soude et les huiles. Elle a de multiples propriétés cosmétiques, notamment elle est très hydratante.
+
+                La plupart du temps, dans les savons industriels elle est retirée chimiquement pour être utilisée à d’autres fins cosmétiques, comme dans les crèmes hydratantes.</p>
+        </div>
+
+        <div class="">
+            <h4 class="">Et le surgras ?</h4>
+            <p class="lead">Le surgras est un pourcentage d’huiles végétales ajoutées qui ne réagira pas avec la soude.
+
+                Cette quantité d’huile sera conservée dans le savon sans être altérée. Plus le pourcentage de surgras est élevé, plus la quantité d’huile non transformée est importante, et le savon sera d’autant plus hydratant.</p>
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider" style="background-color: #B87750">
+
+    <div class="featurette">
+        <h2 style="color: #B87750">Les matières utilisées</h2>
+
+        <div class="row featurette align-items-center">
+            <div class="col-md-7 order-md-2">
+                <h4 class="">Les Huiles :</h4>
+                <p class="lead">Chaque savon est composé d’un mélange d’huiles que l’on appelle la base. Cette base varie d’un savon à l’autre et est souvent composée d’huile d’olive, d’huile de coco ou d’huile de ricin, de cire d’abeille ou de beurre de cacao.
+
+                    En plus de cette base une huile végétale précieuse est ajoutée pour former le surgras.
+
+                    Cette huile ne sera pas transformée et gardera toutes ces propriétés cosmétiques.
+
+                    Le savon à froid n’est pas seulement lavant mais est considéré comme un véritable soin.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="{{ asset('/assets/img/huile.jpg') }}" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="">
+            <h4 class="">Les couleurs :</h4>
+            <p class="lead">Pour la touche artistique, des poudres de plantes, des argiles, du charbon actif, … viennent compléter les recettes. Ces ingrédients permettent de colorer naturellement les savons et d’apporter encore plus de bienfaits pour votre peau.</p>
+        </div>
+
+        <div class="">
+            <h4 class="">Les parfums :</h4>
+            <p class="lead">Aucun parfums, ni huiles essentielles ne sont ajoutés aux savons. Ces savons conviennent donc très bien aux personnes à la peau sensible et aux enfants.
+
+                Certaines huiles végétales apportent un parfum naturel comme l’huile de Prune de Gascogne ou l’huile de Nigelle.</p>
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider" style="background-color: #B87750">
+
+    <div class="featurette">
+
+        <div class="row featurette align-items-center">
+            <div class="col-md-7">
+                <h2 style="color: #B87750">La Savonnérie</h2>
+                <p class="lead">Je suis très intéressée par les plantes et ce que peut naturellement nous apporter notre environnement, lorsque l’on sait bien l’observer.
+
+                    En 2015, j’ai fait 1 an d’étude en herboristerie avec l’école de plantes médicinales de Lyon, en parallèle je travaillais dans une savonnerie artisanale.
+
+                    Avant de créer mon activité, je voulais voyager et m’impliquer avec une ONG humanitaire. Pendant 4 ans, j’ai travaillé pour Médecins sans Frontières, puis j’ai posé mes valises dans le Cantal.
+
+                    Je me suis sentie tellement bien dans cette région que je n’ai plus eue l’envie de repartir et me voilà lancée dans les bulles de savons.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('/assets/img/moi.jpg') }}" class="img-fluid rounded-circle">
+            </div>
+        </div>
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+{% endblock %}

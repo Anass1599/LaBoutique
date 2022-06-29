@@ -6,6 +6,7 @@
     <meta name="description" content="la boutique">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>{% block title %}LA BOUTIQUE{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
@@ -34,17 +35,17 @@
 <body>
 <header class="header-custom">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top " style="background-color: #412B28">
-        <a class="navbar-brand" href="{{ path('home') }}">La Boutique</a>
+        <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('assets/img/logo.jpg') }}" height="50rem"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('products') }}">Accueil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('home') }}">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('products') }}">La savonnerie<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('savonnerie') }}">La savonnerie<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('products') }}">Boutique<span class="sr-only">(current)</span></a>
@@ -56,7 +57,7 @@
                     <a class="nav-link" href="#">Liens/médias<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Contact<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('contact') }}">Contact<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <div class="navbar-item-custom">
@@ -82,7 +83,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <img src="/assets/img/cantal.jpg" class="d-block w-100" alt="...">
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>Example headline.</h1>
@@ -92,17 +93,17 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <img src="/assets/img/cantal1.jpg" class="d-block w-100" alt="...">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                        <h1>La savonnerie des Adrets</h1>
+                        <p>La savonnerie des Adrets est une savonnerie artisanale implantée dans les monts du Cantal, au milieu de la nature et d’un charmant village. Au pied, coule une source d’eau douce dite « intarissable ». </p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">En Savoir Plus</a></p>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <img src="/assets/img/cantal.jpg" class="d-block w-100" alt="...">
                 <div class="container">
                     <div class="carousel-caption text-right">
                         <h1>One more for good measure.</h1>
@@ -144,13 +145,71 @@
     </div><!-- /.container -->
 
     <!-- FOOTER -->
-    <footer class="footer-custom" style="background-color: #412B28">
-        <p>
-            &copy; 2020-2022 La boutique<br/>
-            <small>Vers l'infini et au delà</small><br/>git
-            <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
-        </p>
+    <footer class="footer-custom text-white" style="background-color: #412B28">
+        <section class="">
+            <div class="container text-md-start mt-5">
+
+                <div class="row mt-3">
+
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            La savonnerie des Adrets
+                        </h6>
+                        <p>
+                            <a class="text-white" href="">Mentions légales</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="">Conditions générales de vente</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Retrouvez-nous
+                        </h6>
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i class="fab fa-facebook-f"></i
+                            ></a>
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i class="fab fa-twitter"></i
+                            ></a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i class="fab fa-google"></i
+                            ></a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                        ><i class="fab fa-instagram"></i
+                            ></a>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> 8 bis route du Cordonnier </p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            contact@savonneriedesadrets.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> 06.46.76.01.83</p>
+                    </div>
+                </div>
+
+                <!-- Grid row -->
+            </div>
+        </section>
+
     </footer>
+
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
