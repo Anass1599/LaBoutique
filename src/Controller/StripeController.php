@@ -7,6 +7,7 @@ use App\Entity\Order;
 use App\Entity\OrderDetails;
 use App\Repository\OrderRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +20,7 @@ class StripeController extends AbstractController
     /**
      * @Route("/commande/create-session/{reference}", name="stripe_create_session")
      */
-    public function index(Cart $cart, ProductRepository $productRepository, $reference, OrderRepository $orderRepository)
+    public function index(Cart $cart, ProductRepository $productRepository, $reference, OrderRepository $orderRepository, EntityManagerInterface $entityManager)
     {
         $product_for_stripe = [];
         $YOUR_DOMAIN = 'http://127.0.0.1:8000';
@@ -48,7 +49,7 @@ class StripeController extends AbstractController
         $product_for_stripe[] = [
             'price_data' => [
                 'currency' => 'eur',
-                'unit_amount' => $order->getCarrierPrice()*100,
+                'unit_amount' => $order->getCarrierPrice(),
                 'product_data' => [
                     'name' => $order->getCarrierName(),
                     'images' => [$YOUR_DOMAIN],
@@ -73,6 +74,7 @@ class StripeController extends AbstractController
         ]);
 
         $order->setStripeSessinId($checkout_session->id);
+        $entityManager->flush();
 
         $response = new JsonResponse(['id' => $checkout_session->id]);
         return $response;

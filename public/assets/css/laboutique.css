@@ -50,7 +50,7 @@ a  {
 .form-check{
     background-color: rgba(232, 202, 179, 0.36);
     border-radius: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     margin-top: 1rem;
 }
 
@@ -68,4 +68,12 @@ a  {
     background-color: #f4f8ff;
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
+}
+
+hr {
+background-color: #B87750;
+}
+
+img {
+    border-radius: 10px;
 }

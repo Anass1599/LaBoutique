@@ -9,40 +9,39 @@
     <h2>Mon récapitulatif</h2>
     <p>Vérifiez vos information avant de payer votre commande.</p>
     <hr>
-    <div class="row">
-        <div class="col-md-6">
-            <strong>Mon addresse de livraison</strong><br/>
-            <div class="form-check">
-                {{ delivery|raw }}
-            </div>
-            <hr>
-            <strong>Mon transporteur</strong>
-            <div class="form-check">
-                {{ carrier.name }}<br/>
-                {{ carrier.description }}<br/>
-                {{ (carrier.price )|number_format(2,',', '.') }} €
+    <div class="col-10 m-auto text-center">
+
+        <div class="mb-3">
+            <div class="">
+                <strong>Mon addresse de livraison</strong><br/>
+                <div class="form-check">
+                    {{ delivery|raw }}
+                </div>
+                <br/>
+                <strong>Mon transporteur</strong>
+                <div class="form-check">
+                    {{ carrier.name }}<br/>
+                    {{ carrier.description }}<br/>
+                    {{ (carrier.price/100 )|number_format(2,',', '.') }} €
+                </div>
             </div>
         </div>
-        <div class="col-md-6">
+
+        <div class="text-right">
             <div class="text-center mb-3">
                 <b>Ma commande</b><br/>
             </div>
             {% set total = null %}
             {% for product in cart %}
                 <div class="order-summary1">
-                    <div class="row">
+                    <div class="row text-center">
                         <div class="col-2">
                             <img src="{{ asset('/uploads/'~product.product.illustration) }}" alt="{{ product.product.name }}" height="50vh">
                         </div>
-                        <div class="col-8 my-auto">
-                            {{ product.product.name }}<br/>
-                            <small>
-                                {{ product.product.subtitle }}
-                                <br/>
-                                x {{ product.quantity }}
-                            </small>
+                        <div class="col-8 m-auto">
+                            {{ product.product.name }} x {{ product.quantity }}
                         </div>
-                        <div class="col-2 my-auto">
+                        <div class="col-2 m-auto">
                             {{ ((product.product.price)* product.quantity) / 100|number_format(2, '.', ',') }} €
                         </div>
                     </div>
@@ -51,11 +50,11 @@
             {% endfor %}
             <hr>
             <strong>Sous-Total : {{ (total/100)|number_format(2,',', '.') }} €</strong><br/>
-            <strong>Livraison : {{ (carrier.price )|number_format(2,',', '.') }} €</strong>
+            <strong>Livraison : {{ (carrier.price/100 )|number_format(2,',', '.') }} €</strong>
             <hr>
-            <strong>Total : {{ ((total/100) + carrier.price)|number_format(2,',', '.') }} €</strong>
+            <strong>Total : {{ ((total/100) + (carrier.price/100))|number_format(2,',', '.') }} €</strong>
         </div>
-        <a class="btn btn-outline-success btn-block mt-3" id="checkout-button">Payer | {{ ((total/100) + carrier.price)|number_format(2,',', '.') }} €</a>
+        <a class="btn btn btn-outline-dark btn-block mt-3" id="checkout-button">Payer | {{ ((total/100) + (carrier.price/100))|number_format(2,',', '.') }} €</a>
     </div>
 {% endblock %}
 

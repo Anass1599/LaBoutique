@@ -6,20 +6,20 @@
 
 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <h3>Filtrer</h3>
             {{ form(form) }}
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             <h3>Nos produits</h3>
             <div class="row product-container">
                 {% for product in products %}
                     <div class="col-md-4">
                         <div class="product-item text-center">
                             <a href="{{ path('product', {'slug' : product.slug}) }}"><img src="{{ asset('/uploads/'~product.illustration) }}" class="img-fluid"></a>
-                            <h5>{{ product.name }}</h5>
+                            <h4 class="mt-4" style="color: #B87750">{{ product.name }}</h4>
                             <span class="product-subtitle">{{ product.subtitle }}</span>
-                            <span class="product-price">{{ (product.price/100)|number_format(2, ',', '.') }} €</span>
+                            <span class="product-price">{{ (product.price/100)|number_format(2, ',', '.') }} € TTC</span>
                         </div>
                     </div>
                 {% endfor %}

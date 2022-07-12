@@ -54,6 +54,9 @@ class RegisterType extends AbstractType
             ])
             ->add('sublit', SubmitType::class, [
                 'label' => "S'inscrire",
+                'attr'=> [
+                    'class' => 'btn btn-outline-dark btn-block'
+                ]
             ])
         ;
     }

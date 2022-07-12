@@ -2,8 +2,14 @@
 
 {% block content %}
 
-    <div class="block-small">
-        <h1 class="text-center">Inscription</h1>
+    <div class=" text-center">
+        <h1 class="text-center mb-5">Inscription</h1>
+
+        {% if notification %}
+            <div class="alert alert-info">{{ notification }}</div>
+            <hr>
+        {% endif %}
+
         {{ form(form) }}
     </div>
 

@@ -54,9 +54,6 @@
                     <a class="nav-link" href="{{ path('products') }}">Où me trouver?<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Liens/médias<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
                     <a class="nav-link" href="{{ path('contact') }}">Contact<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
@@ -72,7 +69,7 @@
     </nav>
 </header>
 
-<main role="main">
+<main role="main" style="min-height: 55vh;">
 
     {% if block('carousel') is defined %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -144,73 +141,69 @@
 
     </div><!-- /.container -->
 
-    <!-- FOOTER -->
-    <footer class="footer-custom text-white" style="background-color: #412B28">
-        <section class="">
-            <div class="container text-md-start mt-5">
+</main>
 
-                <div class="row mt-3">
+<!-- FOOTER -->
+<footer class="footer-custom text-white" style="background-color: #412B28">
+    <section class="">
+        <div class="container text-md-start mt-5">
 
-                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            La savonnerie des Adrets
-                        </h6>
-                        <p>
-                            <a class="text-white" href="">Mentions légales</a>
-                        </p>
-                        <p>
-                            <a class="text-white" href="">Conditions générales de vente</a>
-                        </p>
-                    </div>
+            <div class="row mt-3">
 
-                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Retrouvez-nous
-                        </h6>
-                        <!-- Facebook -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-facebook-f"></i
-                            ></a>
-                        <!-- Twitter -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-twitter"></i
-                            ></a>
-
-                        <!-- Google -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-google"></i
-                            ></a>
-
-                        <!-- Instagram -->
-                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                        ><i class="fab fa-instagram"></i
-                            ></a>
-                    </div>
-                    <!-- Grid column -->
-
-                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Contact
-                        </h6>
-                        <p><i class="fas fa-home me-3"></i> 8 bis route du Cordonnier </p>
-                        <p>
-                            <i class="fas fa-envelope me-3"></i>
-                            contact@savonneriedesadrets.com
-                        </p>
-                        <p><i class="fas fa-phone me-3"></i> 06.46.76.01.83</p>
-                    </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        La savonnerie des Adrets
+                    </h6>
+                    <p>
+                        <a class="text-white" href="{{ path('condition_mentions_legale') }}">Mentions légales</a>
+                    </p>
+                    <p>
+                        <a class="text-white" href="">Conditions générales de vente</a>
+                    </p>
                 </div>
 
-                <!-- Grid row -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Retrouvez-nous
+                    </h6>
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SavonneriedesAdrets" role="button"
+                    ><i class="fab fa-facebook-f"></i
+                        ></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/search?q=savonnerie+des+adrets&rlz=1C1VDKB_frFR934FR934&ei=hpnGYsmQG9iglwTj3pvYCw&ved=0ahUKEwjJ6-6grub4AhVY0IUKHWPvBrsQ4dUDCA4&oq=savonnerie+des+adrets&gs_lcp=Cgdnd3Mtd2l6EAwyBQgAEIAEOgcIABBHELADOgQIABANSgQIQRgASgQIRhgAULIJWMcWYOMjaAFwAHgAgAFMiAGyAZIBATOYAQCgAQHIAQTAAQE&sclient=gws-wiz" role="button"
+                    ><i class="fab fa-google"></i
+                        ></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/savonnerie_des_adrets/?fbclid=IwAR0ZTNEZRjieS4dwN7_wcB71GzFemlcTxkf26auBcrL9LImBpRTqfjYMWjQ" role="button"
+                    ><i class="fab fa-instagram"></i
+                        ></a>
+                </div>
+                <!-- Grid column -->
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Contact
+                    </h6>
+                    <p><i class="fas fa-home me-3"></i> 8 bis route du Cordonnier </p>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        contact@savonneriedesadrets.com
+                    </p>
+                    <p><i class="fas fa-phone me-3"></i> 06.46.76.01.83</p>
+                </div>
             </div>
-        </section>
 
-    </footer>
+            <!-- Grid row -->
+        </div>
+    </section>
 
-</main>
+</footer>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
 </body>

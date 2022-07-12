@@ -4,16 +4,15 @@
 
 {% block content %}
 
-    <div class="row">
+    <div class="row align-items-center">
         <div class="col-md-5">
             <img src="{{ asset('/uploads/'~product.illustration) }}" class="img-fluid">
         </div>
         <div class="col-md-7 my-auto">
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.subtitle }}</p>
-            <span class="product-price">{{ (product.price/100)|number_format(2, ',', '.') }} €</span>
-            <hr/>
-            <p>{{ product.description }}</p>
+            <h3 style="color: #B87750">{{ product.name }}</h3>
+            <span class="product-price " style="color: #B87750" >{{ (product.price/100)|number_format(2, ',', '.') }} € TTC</span>
+            <p class="mt-4">{{ product.subtitle }}</p>
+            <p class="mt-4">{{ product.description|raw }}</p>
             <a href="{{ path('add_to_cart', { 'id' : product.id }) }}" class="btn btn-outline-dark">Ajouter au panier</a>
         </div>
     </div>
