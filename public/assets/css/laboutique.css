@@ -77,3 +77,17 @@ background-color: #B87750;
 img {
     border-radius: 10px;
 }
+
+.account-item {
+    background-color: #f1f2f6;
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+.account-item a {
+    text-transform: uppercase;
+}
+
+.account-item a:hover {
+    text-decoration: none;
+}

@@ -5,11 +5,38 @@
 {% block content %}
 
     <h1>Mon compte</h1>
+    {% if is_granted('ROLE_ADMIN')%}
+       <small><a href="{{ path('admin') }}">Accéder à l'espace administrateur</a><br/></small>
+    {% endif %}
     Bienvenue {{ app.user.firstname }} dans votre compte <br/>
     C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
-    <hr style="background-color: #B87750">
-    <a href="{{ path('account_password') }}">Modifier mon mot de passe</a></br>
-    <a href="{{ path('account_address') }}">Gérer mes adresses</a></br>
-    <a href="{{ path('account_order') }}">Mes Commandes</a>
+
+    <hr>
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <img src="{{ asset('assets/img/password.png')}}" alt="Modifier mon mot de passe" ><br/><br/>
+                <a href="{{ path('account_password') }}">Modifier mon mot de passe</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <img src="{{ asset('assets/img/adress.png')}}" alt="Gérer mes adresses" ><br/><br/>
+                <a href="{{ path('account_address') }}">Gérer mes adresses</a></br>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <img src="{{ asset('assets/img/purchase.png')}}" alt="Mes Commandes" ><br/><br/>
+                <a href="{{ path('account_order') }}">Mes Commandes</a>
+            </div>
+        </div>
+
+    </div>
+    
+    <hr>
 
 {% endblock %}
