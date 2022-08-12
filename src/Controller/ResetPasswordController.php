@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class ResetPasswordController extends AbstractController
 {
@@ -42,10 +43,10 @@ class ResetPasswordController extends AbstractController
                 //2 : Envoyer un email à l'utitisateur avec un lien
 
                 $url = $this->generateUrl('update_password', [
-                    'token' => $reset_password->getToken()]
+                    'token' => $reset_password->getToken()], UrlGeneratorInterface::ABSOLUTE_URL
                 );
 
-                $content ="bonjour ".$user->getFirstname()."<br/>Vous avez demander à réinitiatiser votre mot de passe.<br/><br/>";
+                $content ="<h3>Bonjour ".$user->getFirstname().",</h3>Vous avez demander à réinitiatiser votre mot de passe.<br/><br/>";
                 $content .= "Merci de bien vouloir clique sur le lien suivant pour <a href='".$url."'>mettre à jour votre mot de passe.</a>";
 
                 $mail = new Mail();

@@ -14,6 +14,8 @@
             Préparation en cours
         {% elseif order.state == 3 %}
             Livraision en cours
+        {% elseif order.state == 4 %}
+            Commande terminée
         {% endif %}
     </br>
     <strong>Commande passée le :</strong> {{ order.createAt|date('d/m/Y') }}</br>

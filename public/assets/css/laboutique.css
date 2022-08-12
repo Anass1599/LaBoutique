@@ -1,8 +1,19 @@
+@font-face {
+    font-family: "Merienda";
+    src: url("../fonts/Merienda-Regular.ttf");
+}
+
 body{
     position: relative;
 }
 
 a  {
+    color: #B87750;
+}
+
+h2 {
+    font-weight: 900 !important;
+    font-family: "Merienda";
     color: #B87750;
 }
 

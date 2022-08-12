@@ -41,7 +41,20 @@ class RegisterController extends AbstractController
                $notification ="Votre inscription s'est  correctemment déroulée. Vous pouvez dés présent vous connecter à votre compte";
 
                $mail = new Mail();
-               $content = "Bonjours ".$user->getFirstname()."<br/>What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+               $content = "<h3>Bonjour ".$order->getUser()->getFirstname().",</h3>
+                           <div style='text-align: center'>
+                             <h3 style='color: #0c4a6e'>Bienvenue à la Savonnerie des Adrets !</h3>
+                             <p>
+                             Votre inscription a bien été prise en compte.<br/>
+                             Vous pouvez dès à présent vous connecter avec vos identifiants et commander nos produits.
+                             </p><br/><br/>
+                           </div>
+                           <h4 style='color: #0c4a6e'>Une Question ?</h4>
+                           <p>
+                           Nous vous répondons avec plaisir du mardi au samedi de 8h à 18h30, par téléphone au 06.46.76.01.83 ou par mail à contact@savonneriedesadrets.com<br/><br/>
+                           <div style='text-align: center'>Merci et à très bientôt sur www.savonneriedesadrets.com</div>
+                           </p>"
+               ;
                $mail->send($user->getEmail(), $user->getFirstname(), 'boniours', $content);
 
            } else {

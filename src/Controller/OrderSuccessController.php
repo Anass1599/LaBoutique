@@ -34,13 +34,17 @@ class OrderSuccessController extends AbstractController
 
             //Envoyer un email à notre client pour lui confirmer sa commande
             $mail = new Mail();
-            $content = "<h2>Bonjour ".$order->getUser()->getFirstname()."</h2><br>
-            <p>Nous avons le plaisir de vous confirmer l’enregistrement de votre commande N° ".$order->getReference(). " à la date du ".$order->getCreateAt()->format('m/d/Y')." sur notre boutique savonneriedesadrets.com et nous vous remercions de votre confiance.</p>
-            <p>Votre commande sera expédiée dans les meilleurs délais.</p>
-            <p>Nous vous rappelons que vous pouvez à tout moment suivre l’évolution de votre commande dans votre espace privé sur notre site.</p>
-            <p>Une Question ?<br>
-            Nous vous répondons avec plaisir du mardi au samedi de 8h à 18h30, par téléphone au 06.46.76.01.83 ou par mail à contact@savonneriedesadrets.com</p>
-            <p style='align-items: center'>Merci et à très bientôt sur www.savonneriedesadrets.com</p>";
+            $content = "<h3>Bonjour ".$order->getUser()->getFirstname().",</h3>
+            <p STYLE='text-align: center'>Nous avons le plaisir de vous confirmer l’enregistrement de votre commande N° ".$order->getReference(). " à la date du ".$order->getCreateAt()->format('m/d/Y')." sur notre boutique savonneriedesadrets.com et nous vous remercions de votre confiance.<br/>
+             Votre commande sera expédiée dans les meilleurs délais.<br/><br/>
+             Nous vous rappelons que vous pouvez à tout moment suivre l’évolution de votre commande dans votre espace privé sur notre site.<br/>
+            </p>
+            <h4 style='color: #0c4a6e'>Une Question ?</h4>
+            <p>
+               Nous vous répondons avec plaisir du mardi au samedi de 8h à 18h30, par téléphone au 06.46.76.01.83 ou par mail à contact@savonneriedesadrets.com<br/><br/>
+               <div style='text-align: center'>Merci et à très bientôt sur www.savonneriedesadrets.com</div>
+            </p>"
+            ;
 
             $mail->send($order->getUser()->getEmail(), $order->getUser()->getFirstname(), 'Votre commande est bien validée.', $content);
 

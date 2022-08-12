@@ -30,7 +30,7 @@ class ChangePasswordType extends AbstractType
                 'label' => 'Mon  nom',
             ])
             ->add('old_password', PasswordType::class, [
-                'label' => 'Mon mot de passe acutuel',
+                'label' => 'Mon mot de passe actuel',
                 'mapped' => false,
                 'attr' => [
                     'placeholder' => 'Veuillez saisir votre mot de passe actuel',
